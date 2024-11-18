@@ -11,17 +11,17 @@ namespace HR_Manager.Pages
 {
 
 
-    public partial class PagEstadoLab
+    public partial class PagGestionAusencias
     {
 
         /// <summary>
-        /// Control formEstadoLab.
+        /// Control formGestionAusencias.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm formEstadoLab;
+        protected global::System.Web.UI.HtmlControls.HtmlForm formGestionAusencias;
 
         /// <summary>
         /// Control txtEmpleadoID.
@@ -30,16 +30,7 @@ namespace HR_Manager.Pages
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtEmpleadoID;
-
-        /// <summary>
-        /// Control txtEstado.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtEstado;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl txtEmpleadoID;
 
         /// <summary>
         /// Control txtFechaInicio.
@@ -60,49 +51,40 @@ namespace HR_Manager.Pages
         protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl txtFechaFin;
 
         /// <summary>
-        /// Control txtAdicionadoPor.
+        /// Control txtTipoAusencia.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtAdicionadoPor;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtTipoAusencia;
 
         /// <summary>
-        /// Control btnAgregar.
+        /// Control txtMotivo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAgregar;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtMotivo;
 
         /// <summary>
-        /// Control txtEstadoLaboralID.
+        /// Control btnAgregarAusencia.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtEstadoLaboralID;
+        protected global::System.Web.UI.WebControls.Button btnAgregarAusencia;
 
         /// <summary>
-        /// Control txtEmpleadoIDActualizar.
+        /// Control txtAusenciaID.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtEmpleadoIDActualizar;
-
-        /// <summary>
-        /// Control txtEstadoActualizar.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtEstadoActualizar;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl txtAusenciaID;
 
         /// <summary>
         /// Control txtFechaInicioActualizar.
@@ -123,48 +105,57 @@ namespace HR_Manager.Pages
         protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl txtFechaFinActualizar;
 
         /// <summary>
-        /// Control txtModificadoPor.
+        /// Control txtTipoAusenciaActualizar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtModificadoPor;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtTipoAusenciaActualizar;
 
         /// <summary>
-        /// Control btnActualizar.
+        /// Control txtMotivoActualizar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnActualizar;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txtMotivoActualizar;
 
         /// <summary>
-        /// Control txtEstadoLaboralIDEliminar.
+        /// Control btnActualizarAusencia.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtEstadoLaboralIDEliminar;
+        protected global::System.Web.UI.WebControls.Button btnActualizarAusencia;
 
         /// <summary>
-        /// Control btnEliminar.
+        /// Control txtEliminarAusenciaID.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnEliminar;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl txtEliminarAusenciaID;
 
         /// <summary>
-        /// Control btnPagControlHoras.
+        /// Control btnEliminarAusencia.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnPagControlHoras;
+        protected global::System.Web.UI.WebControls.Button btnEliminarAusencia;
+
+        /// <summary>
+        /// Control btnPagReportePuntualidad.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnPagReportePuntualidad;
     }
 }

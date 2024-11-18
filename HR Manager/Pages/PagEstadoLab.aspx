@@ -69,7 +69,7 @@
 
             <!-- Botón para redirigir a la gestión de empleados -->
             <div class="form-section">
-                <asp:Button ID="btnPagEmpleado" runat="server" Text="Gestión de Empleados" OnClick="btnPagEmpleado_Click" />
+                <asp:Button ID="btnPagControlHoras" runat="server" Text="Control de Horarios" OnClick="btnPagControlHoras_Click" />
             </div>
         </div>
     </form>

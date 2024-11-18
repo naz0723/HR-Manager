@@ -12,7 +12,7 @@
     <form id="formControlHoras" runat="server">
         <div class="container">
             <h2>Gestión de Control de Horas</h2>
-
+            </div>
             <!-- Formulario para agregar un control de horas -->
             <div class="form-section">
                 <h3>Agregar Control de Horas</h3>

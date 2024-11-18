@@ -84,13 +84,17 @@
     <Content Include="Pages\PagControlHoras.aspx" />
     <Content Include="Pages\PagEmpleado.aspx" />
     <Content Include="Pages\PagEstadoLab.aspx" />
+    <Content Include="Pages\PagGestionAusencias.aspx" />
+    <Content Include="Pages\PagReportePuntualidad.aspx" />
     <Content Include="Styles\Estilos.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Pages\clGestionAusencias.cs" />
     <Compile Include="Pages\clControlHoras.cs" />
     <Compile Include="Pages\clEmpleado.cs" />
     <Compile Include="Pages\clEstadoLab.cs" />
+    <Compile Include="Pages\clReportePuntualidad.cs" />
     <Compile Include="Pages\DatabaseHelper.cs" />
     <Compile Include="Pages\PagControlHoras.aspx.cs">
       <DependentUpon>PagControlHoras.aspx</DependentUpon>
@@ -112,6 +116,20 @@
     </Compile>
     <Compile Include="Pages\PagEstadoLab.aspx.designer.cs">
       <DependentUpon>PagEstadoLab.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PagGestionAusencias.aspx.cs">
+      <DependentUpon>PagGestionAusencias.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\PagGestionAusencias.aspx.designer.cs">
+      <DependentUpon>PagGestionAusencias.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PagReportePuntualidad.aspx.cs">
+      <DependentUpon>PagReportePuntualidad.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\PagReportePuntualidad.aspx.designer.cs">
+      <DependentUpon>PagReportePuntualidad.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

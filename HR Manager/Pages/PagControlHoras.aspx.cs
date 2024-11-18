@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace HR_Manager.Pages
 {
-    public partial class PagControlHoras : System.Web.UI.Page
+    public partial class PagControlHoras : Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -76,7 +76,7 @@ namespace HR_Manager.Pages
         // Redirigir a la página de gestión de estado laboral
         protected void btnPagGestionAusencias_Click(object sender, EventArgs e)
         {
-            Response.Redirect("PagGestionAusenciass.aspx");
+            Response.Redirect("PagGestionAusencias.aspx");
         }
 
         // Método para mostrar mensajes en la página

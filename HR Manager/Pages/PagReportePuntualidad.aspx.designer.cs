@@ -11,17 +11,17 @@ namespace HR_Manager.Pages
 {
 
 
-    public partial class PagEstadoLab
+    public partial class PagReportePuntualidad
     {
 
         /// <summary>
-        /// Control formEstadoLab.
+        /// Control formGestionReportes.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm formEstadoLab;
+        protected global::System.Web.UI.HtmlControls.HtmlForm formGestionReportes;
 
         /// <summary>
         /// Control txtEmpleadoID.
@@ -30,141 +30,123 @@ namespace HR_Manager.Pages
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtEmpleadoID;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl txtEmpleadoID;
 
         /// <summary>
-        /// Control txtEstado.
+        /// Control txtMes.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtEstado;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl txtMes;
 
         /// <summary>
-        /// Control txtFechaInicio.
+        /// Control txtAño.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl txtFechaInicio;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl txtAño;
 
         /// <summary>
-        /// Control txtFechaFin.
+        /// Control txtDiasTarde.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl txtFechaFin;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl txtDiasTarde;
 
         /// <summary>
-        /// Control txtAdicionadoPor.
+        /// Control txtDiasCumplidos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtAdicionadoPor;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl txtDiasCumplidos;
 
         /// <summary>
-        /// Control btnAgregar.
+        /// Control txtHorasExtras.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAgregar;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl txtHorasExtras;
 
         /// <summary>
-        /// Control txtEstadoLaboralID.
+        /// Control btnAgregarReporte.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtEstadoLaboralID;
+        protected global::System.Web.UI.WebControls.Button btnAgregarReporte;
 
         /// <summary>
-        /// Control txtEmpleadoIDActualizar.
+        /// Control txtReporteID.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtEmpleadoIDActualizar;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl txtReporteID;
 
         /// <summary>
-        /// Control txtEstadoActualizar.
+        /// Control txtDiasTardeActualizar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtEstadoActualizar;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl txtDiasTardeActualizar;
 
         /// <summary>
-        /// Control txtFechaInicioActualizar.
+        /// Control txtDiasCumplidosActualizar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl txtFechaInicioActualizar;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl txtDiasCumplidosActualizar;
 
         /// <summary>
-        /// Control txtFechaFinActualizar.
+        /// Control txtHorasExtrasActualizar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl txtFechaFinActualizar;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl txtHorasExtrasActualizar;
 
         /// <summary>
-        /// Control txtModificadoPor.
+        /// Control btnActualizarReporte.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtModificadoPor;
+        protected global::System.Web.UI.WebControls.Button btnActualizarReporte;
 
         /// <summary>
-        /// Control btnActualizar.
+        /// Control txtEliminarReporteID.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnActualizar;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl txtEliminarReporteID;
 
         /// <summary>
-        /// Control txtEstadoLaboralIDEliminar.
+        /// Control btnEliminarReporte.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText txtEstadoLaboralIDEliminar;
-
-        /// <summary>
-        /// Control btnEliminar.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnEliminar;
-
-        /// <summary>
-        /// Control btnPagControlHoras.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnPagControlHoras;
+        protected global::System.Web.UI.WebControls.Button btnEliminarReporte;
     }
 }

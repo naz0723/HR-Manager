@@ -100,9 +100,9 @@ namespace HR_Manager.Pages
         }
 
         // Redirige a la página de Gestión de Empleados
-        protected void btnPagEmpleado_Click(object sender, EventArgs e)
+        protected void btnPagControlHoras_Click(object sender, EventArgs e)
         {
-            Response.Redirect("PagEmpleado.aspx");
+            Response.Redirect("PagControlHoras.aspx");
         }
     }
 }
