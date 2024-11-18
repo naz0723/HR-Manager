@@ -26,7 +26,7 @@ namespace HR_Manager.Pages
                 try
                 {
                     conn.Open();
-                    string query = "EXEC sp_AgregarEmpleado @Nombre, @Direccion, @Contacto, @FechaIngreso, @Cargo, @Departamento, @Salario, @AdicionadoPor";
+                    string query = "EXEC sp_CrearEmpleado @Nombre, @Direccion, @Contacto, @FechaIngreso, @Cargo, @Departamento, @Salario, @AdicionadoPor";
                     SqlCommand cmd = new SqlCommand(query, conn);
                     cmd.Parameters.AddWithValue("@Nombre", nombre);
                     cmd.Parameters.AddWithValue("@Direccion", direccion);
@@ -59,6 +59,7 @@ namespace HR_Manager.Pages
             string departamento = txtDepartamentoActualizar.Value;
             decimal salario = decimal.Parse(txtSalarioActualizar.Value);
             string modificadoPor = txtModificadoPor.Value;
+            DateTime fechaModificacion = DateTime.Now;
 
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
@@ -76,6 +77,7 @@ namespace HR_Manager.Pages
                     cmd.Parameters.AddWithValue("@Departamento", departamento);
                     cmd.Parameters.AddWithValue("@Salario", salario);
                     cmd.Parameters.AddWithValue("@ModificadoPor", modificadoPor);
+                    cmd.Parameters.AddWithValue("@FechaModificacion", fechaModificacion);
                     cmd.ExecuteNonQuery();
 
                     Response.Write("<script>alert('Empleado actualizado exitosamente');</script>");
