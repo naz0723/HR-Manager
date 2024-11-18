@@ -80,6 +80,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_data\Primeras dos tablas y Crud.sql" />
     <Content Include="Pages\PagEmpleado.aspx" />
     <Content Include="Pages\PagEstadoLab.aspx" />
     <Content Include="Styles\Estilos.css" />
@@ -116,7 +117,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_code\" />
-    <Folder Include="App_data\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
