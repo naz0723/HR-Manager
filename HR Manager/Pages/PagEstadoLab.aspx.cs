@@ -7,7 +7,7 @@ namespace HR_Manager.Pages
     public partial class PagEstadoLab : Page
     {
         // Cadena de conexión a la base de datos (ajusta según tu configuración)
-        private string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["HRDatabase"].ConnectionString;
+        private string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["HRManager"].ConnectionString;
 
         // Método para agregar un estado laboral
         protected void btnAgregar_Click(object sender, EventArgs e)
