@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Configuration;
-using System.Data.SqlClient;
 using System.Data;
+using System.Data.SqlClient;
 using System.IO;
-using System.Linq;
-using System.Web;
 
 namespace HR_Manager.App_code
 {
@@ -151,4 +148,3 @@ namespace HR_Manager.App_code
         }
     }
 }
-    

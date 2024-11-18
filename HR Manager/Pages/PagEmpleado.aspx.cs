@@ -1,96 +1,120 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+using System.Data.SqlClient;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace HR_Manager.Pages
 {
-    public partial class PagEmpleado : System.Web.UI.Page
+    public partial class PagEmpleado : Page
     {
-        protected void Page_Load(object sender, EventArgs e)
-        {
-            // Si la página está cargando por primera vez, no hacemos nada adicional
-        }
+        // Cadena de conexión a la base de datos (ajusta según tu configuración)
+        private string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["HRDatabase"].ConnectionString;
 
-        // Método para manejar el evento de agregar empleado
+        // Método para agregar un empleado
         protected void btnAgregar_Click(object sender, EventArgs e)
         {
-            try
-            {
-                string nombre = txtNombre.Value;
-                string direccion = txtDireccion.Value;
-                string contacto = txtContacto.Value;
-                DateTime fechaIngreso = DateTime.Parse(txtFechaIngreso.Value);
-                string cargo = txtCargo.Value;
-                string departamento = txtDepartamento.Value;
-                decimal salario = decimal.Parse(txtSalario.Value);
-                string adicionadoPor = txtAdicionadoPor.Value;
+            string nombre = txtNombre.Value;
+            string direccion = txtDireccion.Value;
+            string contacto = txtContacto.Value;
+            string fechaIngreso = txtFechaIngreso.Value;
+            string cargo = txtCargo.Value;
+            string departamento = txtDepartamento.Value;
+            decimal salario = decimal.Parse(txtSalario.Value);
+            string adicionadoPor = txtAdicionadoPor.Value;
 
-                bool resultado = clEmpleado.AgregarEmpleado(nombre, direccion, contacto, fechaIngreso, cargo, departamento, salario, adicionadoPor);
-
-                MostrarMensaje(resultado ? "Empleado agregado correctamente." : "Hubo un error al agregar el empleado.", resultado ? "alert-success" : "alert-danger");
-            }
-            catch (Exception ex)
+            using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                MostrarMensaje("Error: " + ex.Message, "alert-danger");
+                try
+                {
+                    conn.Open();
+                    string query = "EXEC sp_AgregarEmpleado @Nombre, @Direccion, @Contacto, @FechaIngreso, @Cargo, @Departamento, @Salario, @AdicionadoPor";
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@Nombre", nombre);
+                    cmd.Parameters.AddWithValue("@Direccion", direccion);
+                    cmd.Parameters.AddWithValue("@Contacto", contacto);
+                    cmd.Parameters.AddWithValue("@FechaIngreso", fechaIngreso);
+                    cmd.Parameters.AddWithValue("@Cargo", cargo);
+                    cmd.Parameters.AddWithValue("@Departamento", departamento);
+                    cmd.Parameters.AddWithValue("@Salario", salario);
+                    cmd.Parameters.AddWithValue("@AdicionadoPor", adicionadoPor);
+                    cmd.ExecuteNonQuery();
+
+                    Response.Write("<script>alert('Empleado agregado exitosamente');</script>");
+                }
+                catch (Exception ex)
+                {
+                    Response.Write("<script>alert('Error: " + ex.Message + "');</script>");
+                }
             }
         }
 
-        // Método para manejar el evento de actualizar empleado
+        // Método para actualizar un empleado
         protected void btnActualizar_Click(object sender, EventArgs e)
         {
-            try
-            {
-                int empleadoID = int.Parse(txtEmpleadoIDActualizar.Value); // Obtener ID de empleado
-                string nombre = txtNombreActualizar.Value;
-                string direccion = txtDireccionActualizar.Value;
-                string contacto = txtContactoActualizar.Value;
-                DateTime fechaIngreso = DateTime.Parse(txtFechaIngresoActualizar.Value);
-                string cargo = txtCargoActualizar.Value;
-                string departamento = txtDepartamentoActualizar.Value;
-                decimal salario = decimal.Parse(txtSalarioActualizar.Value);
-                string modificadoPor = txtModificadoPor.Value;
+            string empleadoID = txtEmpleadoIDActualizar.Value;
+            string nombre = txtNombreActualizar.Value;
+            string direccion = txtDireccionActualizar.Value;
+            string contacto = txtContactoActualizar.Value;
+            string fechaIngreso = txtFechaIngresoActualizar.Value;
+            string cargo = txtCargoActualizar.Value;
+            string departamento = txtDepartamentoActualizar.Value;
+            decimal salario = decimal.Parse(txtSalarioActualizar.Value);
+            string modificadoPor = txtModificadoPor.Value;
 
-                bool resultado = clEmpleado.ActualizarEmpleado(empleadoID, nombre, direccion, contacto, fechaIngreso, cargo, departamento, salario, modificadoPor);
-
-                MostrarMensaje(resultado ? "Empleado actualizado correctamente." : "Hubo un error al actualizar el empleado.", resultado ? "alert-success" : "alert-danger");
-            }
-            catch (Exception ex)
+            using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                MostrarMensaje("Error: " + ex.Message, "alert-danger");
+                try
+                {
+                    conn.Open();
+                    string query = "EXEC sp_ActualizarEmpleado @EmpleadoID, @Nombre, @Direccion, @Contacto, @FechaIngreso, @Cargo, @Departamento, @Salario, @ModificadoPor";
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@EmpleadoID", empleadoID);
+                    cmd.Parameters.AddWithValue("@Nombre", nombre);
+                    cmd.Parameters.AddWithValue("@Direccion", direccion);
+                    cmd.Parameters.AddWithValue("@Contacto", contacto);
+                    cmd.Parameters.AddWithValue("@FechaIngreso", fechaIngreso);
+                    cmd.Parameters.AddWithValue("@Cargo", cargo);
+                    cmd.Parameters.AddWithValue("@Departamento", departamento);
+                    cmd.Parameters.AddWithValue("@Salario", salario);
+                    cmd.Parameters.AddWithValue("@ModificadoPor", modificadoPor);
+                    cmd.ExecuteNonQuery();
+
+                    Response.Write("<script>alert('Empleado actualizado exitosamente');</script>");
+                }
+                catch (Exception ex)
+                {
+                    Response.Write("<script>alert('Error: " + ex.Message + "');</script>");
+                }
             }
         }
 
-        // Método para manejar el evento de eliminar empleado
+        // Método para eliminar un empleado
         protected void btnEliminar_Click(object sender, EventArgs e)
         {
-            try
-            {
-                int empleadoID = int.Parse(txtEmpleadoIDEliminar.Value); // Obtener ID de empleado
+            string empleadoID = txtEmpleadoIDEliminar.Value;
 
-                bool resultado = clEmpleado.EliminarEmpleado(empleadoID);
-
-                MostrarMensaje(resultado ? "Empleado eliminado correctamente." : "Hubo un error al eliminar el empleado.", resultado ? "alert-success" : "alert-danger");
-            }
-            catch (Exception ex)
+            using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                MostrarMensaje("Error: " + ex.Message, "alert-danger");
+                try
+                {
+                    conn.Open();
+                    string query = "EXEC sp_EliminarEmpleado @EmpleadoID";
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@EmpleadoID", empleadoID);
+                    cmd.ExecuteNonQuery();
+
+                    Response.Write("<script>alert('Empleado eliminado exitosamente');</script>");
+                }
+                catch (Exception ex)
+                {
+                    Response.Write("<script>alert('Error: " + ex.Message + "');</script>");
+                }
             }
         }
 
-        // Redirigir a la página de gestión de estado laboral
+        // Redirige a la página de gestión de estado laboral
         protected void btnPagEstadoLab_Click(object sender, EventArgs e)
         {
             Response.Redirect("PagEstadoLab.aspx");
-        }
-
-        // Método para mostrar mensajes en la página
-        private void MostrarMensaje(string mensaje, string tipo)
-        {
-            // Puedes agregar un contenedor para mostrar el mensaje en la página.
-            ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", $"alert('{mensaje}');", true);
         }
     }
 }
