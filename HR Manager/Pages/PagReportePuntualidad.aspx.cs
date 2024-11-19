@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace HR_Manager.Pages
 {
@@ -11,7 +7,7 @@ namespace HR_Manager.Pages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            // Lógica de inicialización si es necesario
+            
         }
 
         // Maneja la acción de agregar un reporte de puntualidad

@@ -1,20 +1,13 @@
 ﻿using HR_Manager.App_code;
 using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Data;
-using System.Linq;
-using System.Web;
+using System.Data.SqlClient;
 
 namespace HR_Manager.Pages
 {
     public class clReportePuntualidad
     {
         public static DatabaseHelper dh = new DatabaseHelper();
-
-        /// <summary>
-        /// Este método agrega un nuevo dueño utilizando el procedimiento almacenado sp_CrearDueño.
-        /// </summary>
 
         public static bool AgregarReporte(int empleadoID, int mes, int año, int diasTarde, int diasCumplidos, float horasExtras)
         {

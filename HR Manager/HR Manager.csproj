@@ -81,6 +81,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_data\Primeras dos tablas y Crud.sql" />
+    <Content Include="App_data\Segundas tres tablas y Crud.sql" />
     <Content Include="Pages\PagControlHoras.aspx" />
     <Content Include="Pages\PagEmpleado.aspx" />
     <Content Include="Pages\PagEstadoLab.aspx" />
