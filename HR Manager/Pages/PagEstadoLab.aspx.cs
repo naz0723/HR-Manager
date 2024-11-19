@@ -6,10 +6,10 @@ namespace HR_Manager.Pages
 {
     public partial class PagEstadoLab : Page
     {
-        // Cadena de conexión a la base de datos (ajusta según tu configuración)
+        
         private string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["HRManager"].ConnectionString;
 
-        // Método para agregar un estado laboral
+        
         protected void btnAgregar_Click(object sender, EventArgs e)
         {
             string empleadoID = txtEmpleadoID.Value;
@@ -41,7 +41,7 @@ namespace HR_Manager.Pages
             }
         }
 
-        // Método para actualizar un estado laboral
+        
         protected void btnActualizar_Click(object sender, EventArgs e)
         {
             string estadoLaboralID = txtEstadoLaboralID.Value;
@@ -75,7 +75,7 @@ namespace HR_Manager.Pages
             }
         }
 
-        // Método para eliminar un estado laboral
+        
         protected void btnEliminar_Click(object sender, EventArgs e)
         {
             string estadoLaboralID = txtEstadoLaboralIDEliminar.Value;
@@ -99,7 +99,7 @@ namespace HR_Manager.Pages
             }
         }
 
-        // Redirige a la página de Gestión de Empleados
+        
         protected void btnPagControlHoras_Click(object sender, EventArgs e)
         {
             Response.Redirect("PagControlHoras.aspx");

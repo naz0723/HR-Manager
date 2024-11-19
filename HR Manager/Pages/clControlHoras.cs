@@ -9,9 +9,7 @@ namespace HR_Manager.Pages
     {
         public static DatabaseHelper dh = new DatabaseHelper();
 
-        /// <summary>
-        /// Este método agrega un nuevo dueño utilizando el procedimiento almacenado sp_CrearDueño.
-        /// </summary>
+        
 
         public static bool AgregarControlHoras(int empleadoID, DateTime fecha, TimeSpan horaEntrada)
         {

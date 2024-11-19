@@ -13,7 +13,7 @@
         <div class="container">
             <h2>Gestión de Reportes de Puntualidad</h2>
 
-            <!-- Formulario para agregar un reporte -->
+           
             <div class="form-section">
                 <h3>Agregar Reporte de Puntualidad</h3>
                 <label for="txtEmpleadoID">ID del Empleado:</label>
@@ -37,7 +37,7 @@
                 <asp:Button ID="btnAgregarReporte" runat="server" Text="Agregar Reporte" OnClick="btnAgregarReporte_Click" />
             </div>
 
-            <!-- Formulario para actualizar un reporte -->
+           
             <div class="form-section">
                 <h3>Actualizar Reporte de Puntualidad</h3>
                 <label for="txtReporteID">ID del Reporte:</label>
@@ -55,7 +55,7 @@
                 <asp:Button ID="btnActualizarReporte" runat="server" Text="Actualizar Reporte" OnClick="btnActualizarReporte_Click" />
             </div>
 
-            <!-- Formulario para eliminar un reporte -->
+            
             <div class="form-section">
                 <h3>Eliminar Reporte de Puntualidad</h3>
                 <label for="txtEliminarReporteID">ID del Reporte:</label>

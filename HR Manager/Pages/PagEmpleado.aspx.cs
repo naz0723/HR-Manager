@@ -9,7 +9,7 @@ namespace HR_Manager.Pages
         // Cadena de conexión a la base de datos (ajusta según tu configuración)
         private string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["HRManager"].ConnectionString;
 
-        // Método para agregar un empleado
+        
         protected void btnAgregar_Click(object sender, EventArgs e)
         {
             string nombre = txtNombre.Value;
@@ -47,7 +47,7 @@ namespace HR_Manager.Pages
             }
         }
 
-        // Método para actualizar un empleado
+        
         protected void btnActualizar_Click(object sender, EventArgs e)
         {
             string empleadoID = txtEmpleadoIDActualizar.Value;
@@ -89,7 +89,7 @@ namespace HR_Manager.Pages
             }
         }
 
-        // Método para eliminar un empleado
+        
         protected void btnEliminar_Click(object sender, EventArgs e)
         {
             string empleadoID = txtEmpleadoIDEliminar.Value;
@@ -113,7 +113,7 @@ namespace HR_Manager.Pages
             }
         }
 
-        // Redirige a la página de gestión de estado laboral
+        
         protected void btnPagEstadoLab_Click(object sender, EventArgs e)
         {
             Response.Redirect("PagEstadoLab.aspx");

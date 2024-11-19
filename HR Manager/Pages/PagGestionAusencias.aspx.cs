@@ -7,10 +7,10 @@ namespace HR_Manager.Pages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            // Lógica de inicialización si es necesario
+            
         }
 
-        // Maneja la acción de agregar una ausencia
+        
         protected void btnAgregarAusencia_Click(object sender, EventArgs e)
         {
             int empleadoID = Convert.ToInt32(txtEmpleadoID.Value);
@@ -23,17 +23,14 @@ namespace HR_Manager.Pages
 
             if (success)
             {
-                // Mensaje de éxito
                 Response.Write("<script>alert('Ausencia agregada exitosamente');</script>");
             }
             else
             {
-                // Mensaje de error
                 Response.Write("<script>alert('Hubo un error al agregar la ausencia');</script>");
             }
         }
 
-        // Maneja la acción de actualizar una ausencia
         protected void btnActualizarAusencia_Click(object sender, EventArgs e)
         {
             int ausenciaID = Convert.ToInt32(txtAusenciaID.Value);
@@ -46,17 +43,14 @@ namespace HR_Manager.Pages
 
             if (success)
             {
-                // Mensaje de éxito
                 Response.Write("<script>alert('Ausencia actualizada exitosamente');</script>");
             }
             else
             {
-                // Mensaje de error
                 Response.Write("<script>alert('Hubo un error al actualizar la ausencia');</script>");
             }
         }
 
-        // Maneja la acción de eliminar una ausencia
         protected void btnEliminarAusencia_Click(object sender, EventArgs e)
         {
             int ausenciaID = Convert.ToInt32(txtEliminarAusenciaID.Value);
@@ -65,26 +59,22 @@ namespace HR_Manager.Pages
 
             if (success)
             {
-                // Mensaje de éxito
                 Response.Write("<script>alert('Ausencia eliminada exitosamente');</script>");
             }
             else
             {
-                // Mensaje de error
                 Response.Write("<script>alert('Hubo un error al eliminar la ausencia');</script>");
             }
         }
-        // Redirigir a la página de gestión de estado laboral
         protected void btnPagReportePuntualidad_Click(object sender, EventArgs e)
         {
             Response.Redirect("PagReportePuntualidad.aspx");
         }
 
-        // Método para mostrar mensajes en la página
-        private void MostrarMensaje(string mensaje, string tipo)
-        {
-            // Puedes agregar un contenedor para mostrar el mensaje en la página.
-            ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", $"alert('{mensaje}');", true);
-        }
+        //private void MostrarMensaje(string mensaje, string tipo)
+        //{
+        //    // Puedes agregar un contenedor para mostrar el mensaje en la página.
+        //    ScriptManager.RegisterStartupScript(this, this.GetType(), "alert", $"alert('{mensaje}');", true);
+        //}
     }
 }

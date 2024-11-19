@@ -13,7 +13,7 @@
         <div class="container">
             <h2>Gestión de Estados Laborales</h2>
 
-            <!-- Formulario para agregar un estado laboral -->
+           
             <div class="form-section">
                 <h3>Agregar Estado Laboral</h3>
                 <label for="txtEmpleadoID">ID del Empleado:</label>
@@ -34,7 +34,7 @@
                 <asp:Button ID="btnAgregar" runat="server" Text="Agregar Estado" OnClick="btnAgregar_Click" />
             </div>
 
-            <!-- Formulario para actualizar un estado laboral -->
+            
             <div class="form-section">
                 <h3>Actualizar Estado Laboral</h3>
                 <label for="txtEstadoLaboralID">ID del Estado Laboral:</label>
@@ -58,7 +58,7 @@
                 <asp:Button ID="btnActualizar" runat="server" Text="Actualizar Estado" OnClick="btnActualizar_Click" />
             </div>
 
-            <!-- Formulario para eliminar un estado laboral -->
+            
             <div class="form-section">
                 <h3>Eliminar Estado Laboral</h3>
                 <label for="txtEstadoLaboralIDEliminar">ID del Estado Laboral:</label>
@@ -67,7 +67,7 @@
                 <asp:Button ID="btnEliminar" runat="server" Text="Eliminar Estado" OnClick="btnEliminar_Click" />
             </div>
 
-            <!-- Botón para redirigir a la gestión de empleados -->
+            
             <div class="form-section">
                 <asp:Button ID="btnPagControlHoras" runat="server" Text="Control de Horarios" OnClick="btnPagControlHoras_Click" />
             </div>

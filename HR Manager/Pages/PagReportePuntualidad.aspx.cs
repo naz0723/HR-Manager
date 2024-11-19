@@ -10,7 +10,6 @@ namespace HR_Manager.Pages
             
         }
 
-        // Maneja la acción de agregar un reporte de puntualidad
         protected void btnAgregarReporte_Click(object sender, EventArgs e)
         {
             int empleadoID = Convert.ToInt32(txtEmpleadoID.Value);
@@ -24,17 +23,15 @@ namespace HR_Manager.Pages
 
             if (success)
             {
-                // Mensaje de éxito
                 Response.Write("<script>alert('Reporte de puntualidad agregado exitosamente');</script>");
             }
             else
             {
-                // Mensaje de error
                 Response.Write("<script>alert('Hubo un error al agregar el reporte de puntualidad');</script>");
             }
         }
 
-        // Maneja la acción de actualizar un reporte de puntualidad
+       
         protected void btnActualizarReporte_Click(object sender, EventArgs e)
         {
             int reporteID = Convert.ToInt32(txtReporteID.Value);
@@ -46,17 +43,15 @@ namespace HR_Manager.Pages
 
             if (success)
             {
-                // Mensaje de éxito
                 Response.Write("<script>alert('Reporte de puntualidad actualizado exitosamente');</script>");
             }
             else
             {
-                // Mensaje de error
                 Response.Write("<script>alert('Hubo un error al actualizar el reporte de puntualidad');</script>");
             }
         }
 
-        // Maneja la acción de eliminar un reporte de puntualidad
+       
         protected void btnEliminarReporte_Click(object sender, EventArgs e)
         {
             int reporteID = Convert.ToInt32(txtEliminarReporteID.Value);
@@ -65,12 +60,10 @@ namespace HR_Manager.Pages
 
             if (success)
             {
-                // Mensaje de éxito
                 Response.Write("<script>alert('Reporte de puntualidad eliminado exitosamente');</script>");
             }
             else
             {
-                // Mensaje de error
                 Response.Write("<script>alert('Hubo un error al eliminar el reporte de puntualidad');</script>");
             }
         }

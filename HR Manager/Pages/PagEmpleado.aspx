@@ -13,7 +13,7 @@
         <div class="container">
             <h2>Gestión de Empleados</h2>
 
-            <!-- Formulario para agregar un empleado -->
+           
             <div class="form-section">
                 <h3>Agregar Empleado</h3>
                 <label for="txtNombre">Nombre:</label>
@@ -43,7 +43,7 @@
                 <asp:Button ID="btnAgregar" runat="server" Text="Agregar Empleado" OnClick="btnAgregar_Click" />
             </div>
 
-            <!-- Formulario para eliminar un empleado -->
+            
             <div class="form-section">
                 <h3>Eliminar Empleado</h3>
                 <label for="txtEmpleadoIDEliminar">ID del Empleado:</label>
@@ -51,7 +51,7 @@
                 <asp:Button ID="btnEliminar" runat="server" Text="Eliminar Empleado" OnClick="btnEliminar_Click" />
             </div>
 
-            <!-- Formulario para actualizar un empleado -->
+            
             <div class="form-section">
                 <h3>Actualizar Empleado</h3>
                 <label for="txtEmpleadoIDActualizar">ID del Empleado:</label>
@@ -84,7 +84,7 @@
                 <asp:Button ID="btnActualizar" runat="server" Text="Actualizar Empleado" OnClick="btnActualizar_Click" />
             </div>
 
-            <!-- Redirigir a otra página -->
+            
             <div class="form-section">
                 <asp:Button ID="btnPagEstadoLab" runat="server" Text="Gestionar Estado Laboral" OnClick="btnPagEstadoLab_Click" />
             </div>

@@ -12,8 +12,8 @@
     <form id="formControlHoras" runat="server">
         <div class="container">
             <h2>Gestión de Control de Horas</h2>
-            </div>
-            <!-- Formulario para agregar un control de horas -->
+           
+            
             <div class="form-section">
                 <h3>Agregar Control de Horas</h3>
                 <label for="txtEmpleadoID">ID del Empleado:</label>
@@ -28,7 +28,7 @@
                 <asp:Button ID="btnAgregarControlHoras" runat="server" Text="Agregar Control de Horas" OnClick="btnAgregarControlHoras_Click" />
             </div>
 
-            <!-- Formulario para actualizar un control de horas -->
+            
             <div class="form-section">
                 <h3>Actualizar Control de Horas</h3>
                 <label for="txtControlHorasID">ID del Control de Horas:</label>
@@ -40,7 +40,7 @@
                 <asp:Button ID="btnActualizarControlHoras" runat="server" Text="Actualizar Control de Horas" OnClick="btnActualizarControlHoras_Click" />
             </div>
 
-            <!-- Formulario para eliminar un control de horas -->
+            
             <div class="form-section">
                 <h3>Eliminar Control de Horas</h3>
                 <label for="txtEliminarControlHorasID">ID del Control de Horas:</label>
@@ -48,7 +48,7 @@
                 <asp:Button ID="btnEliminarControlHoras" runat="server" Text="Eliminar Control de Horas" OnClick="btnEliminarControlHoras_Click" />
             </div>
 
-                 <!-- Botón para redirigir a la gestión de empleados -->
+                
          <div class="form-section">
              <asp:Button ID="btnPagGestionAusencias" runat="server" Text="Gestion de Ausencias" OnClick="btnPagGestionAusencias_Click" />
          </div>

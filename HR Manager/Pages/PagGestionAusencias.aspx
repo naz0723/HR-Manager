@@ -13,7 +13,6 @@
         <div class="container">
             <h2>Gestión de Ausencias</h2>
 
-            <!-- Formulario para agregar una ausencia -->
             <div class="form-section">
                 <h3>Agregar Ausencia</h3>
                 <label for="txtEmpleadoID">ID del Empleado:</label>
@@ -34,7 +33,7 @@
                 <asp:Button ID="btnAgregarAusencia" runat="server" Text="Agregar Ausencia" OnClick="btnAgregarAusencia_Click" />
             </div>
 
-            <!-- Formulario para actualizar una ausencia -->
+           
             <div class="form-section">
                 <h3>Actualizar Ausencia</h3>
                 <label for="txtAusenciaID">ID de la Ausencia:</label>
@@ -55,14 +54,14 @@
                 <asp:Button ID="btnActualizarAusencia" runat="server" Text="Actualizar Ausencia" OnClick="btnActualizarAusencia_Click" />
             </div>
 
-            <!-- Formulario para eliminar una ausencia -->
+            
             <div class="form-section">
                 <h3>Eliminar Ausencia</h3>
                 <label for="txtEliminarAusenciaID">ID de la Ausencia:</label>
                 <input type="number" id="txtEliminarAusenciaID" runat="server" />
                 <asp:Button ID="btnEliminarAusencia" runat="server" Text="Eliminar Ausencia" OnClick="btnEliminarAusencia_Click" />
             </div>
-                    <!-- Redirigir a otra página -->
+                    
         <div class="form-section">
             <asp:Button ID="btnPagReportePuntualidad" runat="server" Text="Reporte de Puntualidad" OnClick=" btnPagReportePuntualidad_Click" />
         </div>
