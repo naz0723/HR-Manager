@@ -24,6 +24,15 @@ namespace HR_Manager.Pages
         protected global::System.Web.UI.HtmlControls.HtmlForm formEmpleados;
 
         /// <summary>
+        /// Control lblWelcome.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblWelcome;
+
+        /// <summary>
         /// Control txtNombre.
         /// </summary>
         /// <remarks>

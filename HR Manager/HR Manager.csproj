@@ -105,6 +105,7 @@
     <Compile Include="Pages\Loginform.aspx.designer.cs">
       <DependentUpon>Loginform.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Pages\UsuarioDao.cs" />
     <Compile Include="Pages\PagControlHoras.aspx.cs">
       <DependentUpon>PagControlHoras.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

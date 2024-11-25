@@ -1,27 +1,24 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Loginform.aspx.cs" Inherits="HR_Manager.Pages.Loginform" %>
 
-<!DOCTYPE html>
 
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Login</title>
+    <title>Inicio de Sesión</title>
+    <link type="text/css" rel="stylesheet" href="../Styles/Estilos.css" />
 </head>
 <body>
-    <form id="form1" runat="server" method="post">
- <div class="login-form">
-     <h2>Login</h2>
-     <form id="form2" runat="server" method="post">
-         <label for="username">Usuario:</label>
-         <input type="text" id="username" name="username" runat="server" required>
-
-         <label for="password">Contraseña:</label>
-         <input type="password" id="password" name="password" runat="server" required>
-         <br />
-         <button type="submit" runat="server" onserverclick="BtnLogin_Click">Iniciar sesión</button>
-     </form>
-     <div class="message" runat="server" id="lblMessage"></div>
-     <!-- Div para mensajes -->
- </div>
+    <form id="form1" runat="server">
+        <div class="login-container">
+            <h2>Inicio de Sesión</h2>
+            <label for="txtUsername">Usuario</label>
+            <input type="text" id="username" name="user" runat="server" required>
+            <label for="txtPassword">Contraseña</label>
+            <input type="password" id="password" name="pass" runat="server" required>
+            <asp:Button ID="btnLogin" runat="server" Text="Iniciar Sesión" OnClick="BtnLogin_Click" />
+            <asp:Label ID="lblMessage" runat="server" CssClass="error-message" Visible="false"></asp:Label>
+        </div>
     </form>
 </body>
 </html>
+

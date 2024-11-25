@@ -11,61 +11,73 @@ namespace HR_Manager.Pages
         // Cadena de conexión a la base de datos (ajusta según tu configuración)
         private string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["HRManager"].ConnectionString;
 
+        //protected void Page_Load(object sender, EventArgs e)
+        //{
+        //    if (!IsPostBack)
+        //    {
+        //        CargarCargos();
+        //    }
+        //}
+
+        //private void CargarCargos()
+        //{
+        //    using (SqlConnection conn = new SqlConnection(connectionString))
+        //    {
+        //        try
+        //        {
+        //            conn.Open();
+        //            string query = "SELECT CargoID, CargoNombre FROM Cargos"; // Ajusta según tu tabla
+        //            SqlCommand cmd = new SqlCommand(query, conn);
+        //            SqlDataReader reader = cmd.ExecuteReader();
+
+        //            ddlCargo.DataSource = reader;
+        //            ddlCargo.DataTextField = "CargoNombre";
+        //            ddlCargo.DataValueField = "CargoID";
+        //            ddlCargo.DataBind();
+
+        //            ddlCargo.Items.Insert(0, new System.Web.UI.WebControls.ListItem("--Seleccionar Cargo--", ""));
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            Response.Write("<script>alert('Error al cargar cargos: " + ex.Message + "');</script>");
+        //        }
+        //    }
+        //}
+
+        //private void CargarCargos()
+        //{
+        //    using (SqlConnection conn = new SqlConnection(connectionString))
+        //    {
+        //        try
+        //        {
+        //            conn.Open();
+        //            string query = "SELECT CargoID, NombreCargo FROM Cargos"; // Ajusta según la estructura de tu tabla.
+        //            SqlCommand cmd = new SqlCommand(query, conn);
+        //            SqlDataReader reader = cmd.ExecuteReader();
+
+        //            ddlCargo.DataSource = reader;
+        //            ddlCargo.DataTextField = "NombreCargo"; // Campo que se mostrará en la lista.
+        //            ddlCargo.DataValueField = "CargoID"; // Valor del campo (ID).
+        //            ddlCargo.DataBind();
+
+        //            ddlCargo.Items.Insert(0, new ListItem("-- Seleccione un cargo --", "0"));
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            Response.Write("<script>alert('Error al cargar cargos: " + ex.Message + "');</script>");
+        //        }
+        //    }
+        //}
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+            if (Session["NombreCompleto"] != null)
             {
-                CargarCargos();
+                lblWelcome.Text = "Bienvenido, " + Session["NombreCompleto"].ToString();
             }
-        }
-
-        private void CargarCargos()
-        {
-            using (SqlConnection conn = new SqlConnection(connectionString))
+            else
             {
-                try
-                {
-                    conn.Open();
-                    string query = "SELECT CargoID, CargoNombre FROM Cargos"; // Ajusta según tu tabla
-                    SqlCommand cmd = new SqlCommand(query, conn);
-                    SqlDataReader reader = cmd.ExecuteReader();
-
-                    ddlCargo.DataSource = reader;
-                    ddlCargo.DataTextField = "CargoNombre";
-                    ddlCargo.DataValueField = "CargoID";
-                    ddlCargo.DataBind();
-
-                    ddlCargo.Items.Insert(0, new System.Web.UI.WebControls.ListItem("--Seleccionar Cargo--", ""));
-                }
-                catch (Exception ex)
-                {
-                    Response.Write("<script>alert('Error al cargar cargos: " + ex.Message + "');</script>");
-                }
-            }
-        }
-
-        private void CargarCargos()
-        {
-            using (SqlConnection conn = new SqlConnection(connectionString))
-            {
-                try
-                {
-                    conn.Open();
-                    string query = "SELECT CargoID, NombreCargo FROM Cargos"; // Ajusta según la estructura de tu tabla.
-                    SqlCommand cmd = new SqlCommand(query, conn);
-                    SqlDataReader reader = cmd.ExecuteReader();
-
-                    ddlCargo.DataSource = reader;
-                    ddlCargo.DataTextField = "NombreCargo"; // Campo que se mostrará en la lista.
-                    ddlCargo.DataValueField = "CargoID"; // Valor del campo (ID).
-                    ddlCargo.DataBind();
-
-                    ddlCargo.Items.Insert(0, new ListItem("-- Seleccione un cargo --", "0"));
-                }
-                catch (Exception ex)
-                {
-                    Response.Write("<script>alert('Error al cargar cargos: " + ex.Message + "');</script>");
-                }
+                Response.Redirect("Loginform.aspx");
             }
         }
 

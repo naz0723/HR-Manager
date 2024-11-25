@@ -13,6 +13,8 @@
         <div class="container">
             <h2>Gestión de Empleados</h2>
 
+            <asp:Label ID="lblWelcome" runat="server" CssClass="welcome-message"></asp:Label>
+
            
             <div class="form-section">
                 <h3>Agregar Empleado</h3>
