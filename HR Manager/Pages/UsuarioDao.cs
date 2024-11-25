@@ -10,50 +10,45 @@ namespace HR_Manager.Pages
     {
         public static DatabaseHelper dh = new DatabaseHelper();
 
-        /// <summary>
-        /// Este método intenta iniciar sesión con el nombre de usuario y contraseña proporcionados.
-        /// </summary>
-        /// <param name="nombreUsuario">El nombre de usuario del usuario que intenta iniciar sesión.</param>
-        /// <param name="contrasenna">La contraseña del usuario.</param>
-        /// <returns>Un DataRow que contiene la información del usuario si el inicio de sesión es exitoso, de lo contrario null.</returns>
-        public static DataRow IniciarSesion(string nombreUsuario, string contrasenna)
+        public static int? IniciarSesion(string nombreUsuario, string contrasenna)
         {
             dh = new DatabaseHelper();
             try
             {
-                // Definir la consulta SQL para ejecutar el procedimiento almacenado
-                //string query = "EXEC sp_IniciarSesion @NombreUsuario = '" + nombreUsuario + "', @Contrasenna = '" + contrasenna + "'; ";
                 string query = "sp_IniciarSesion";
 
-                // Define los parámetros
+                // Parámetros de la consulta
                 SqlParameter[] sqlParameters = new SqlParameter[]
                 {
-                    new SqlParameter("@Usuario",SqlDbType.Text){Value = nombreUsuario},
-                    new SqlParameter("@Contraseña", SqlDbType.Text){Value = contrasenna},
+            new SqlParameter("@Usuario", SqlDbType.Text) { Value = nombreUsuario },
+            new SqlParameter("@Contraseña", SqlDbType.Text) { Value = contrasenna }
                 };
 
-                // Ejecutar la consulta y obtener los resultados
+                // Ejecuta la consulta
                 DataTable resultado = dh.ExecuteSelectQuery(query, sqlParameters);
 
-                // Verificar si se ha devuelto algún resultado
+                // Verificar si la consulta devolvió resultados
                 if (resultado.Rows.Count > 0)
                 {
-                    // Devolver la primera fila de resultados
-                    return resultado.Rows[0];
+                    // Imprime los resultados para verificar
+                    Debug.WriteLine("Usuario encontrado: " + resultado.Rows[0]["UsuarioID"]);
+                    return (int?)resultado.Rows[0]["UsuarioID"];
                 }
                 else
                 {
-                    // Si no se encontró el usuario, retornar null
+                    Debug.WriteLine("Usuario no encontrado.");
                     return null;
                 }
             }
             catch (Exception ex)
             {
-                // Manejar cualquier error que ocurra y registrar el error
+                // Maneja el error si algo sale mal
                 dh.LogError(ex);
-                throw; // Re-lanzar la excepción para manejarla en un nivel superior
+                Debug.WriteLine("Error: " + ex.Message);
+                return null;
             }
         }
+
     }
 }
 
