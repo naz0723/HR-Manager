@@ -9,7 +9,7 @@ namespace HR_Manager.Pages
     {
         public static DatabaseHelper dh = new DatabaseHelper();
 
-       
+
 
         public static bool AgregarAusencia(int empleadoID, DateTime fechaInicio, DateTime fechaFin, string tipoAusencia, string motivo)
         {

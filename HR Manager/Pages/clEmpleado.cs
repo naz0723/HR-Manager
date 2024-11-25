@@ -13,7 +13,7 @@ namespace HR_Manager.Pages
         {
             try
             {
-                
+
                 string query = "sp_CrearEmpleado";
 
                 SqlParameter[] sqlParameters = new SqlParameter[]
@@ -28,15 +28,15 @@ namespace HR_Manager.Pages
             new SqlParameter("@AdicionadoPor", SqlDbType.NVarChar, 50) { Value = adicionadoPor }
                 };
 
-                
+
                 int rowsAffected = dh.ExecuteNonQuery(query, sqlParameters);
 
-                
+
                 return rowsAffected > 0;
             }
             catch (Exception ex)
             {
-                
+
                 dh.LogError(ex);
                 return false;
             }
@@ -45,10 +45,10 @@ namespace HR_Manager.Pages
         {
             try
             {
-                
+
                 string query = "sp_ActualizarEmpleado";
 
-                
+
                 SqlParameter[] sqlParameters = new SqlParameter[]
                 {
             new SqlParameter("@EmpleadoID", SqlDbType.Int) { Value = empleadoID },
@@ -62,15 +62,15 @@ namespace HR_Manager.Pages
             new SqlParameter("@ModificadoPor", SqlDbType.NVarChar, 50) { Value = modificadoPor }
                 };
 
-                
+
                 int rowsAffected = dh.ExecuteNonQuery(query, sqlParameters);
 
-                
+
                 return rowsAffected > 0;
             }
             catch (Exception ex)
             {
-                
+
                 dh.LogError(ex);
                 return false;
             }
@@ -80,19 +80,19 @@ namespace HR_Manager.Pages
         {
             try
             {
-                
+
                 string query = "sp_EliminarEmpleado";
 
-                
+
                 SqlParameter[] sqlParameters = new SqlParameter[]
                 {
             new SqlParameter("@EmpleadoID", SqlDbType.Int) { Value = empleadoID }
                 };
 
-                
+
                 int rowsAffected = dh.ExecuteNonQuery(query, sqlParameters);
 
-                
+
                 return rowsAffected > 0;
             }
             catch (Exception ex)

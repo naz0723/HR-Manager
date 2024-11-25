@@ -7,10 +7,10 @@ namespace HR_Manager.Pages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+
         }
 
-        
+
         protected void btnAgregarControlHoras_Click(object sender, EventArgs e)
         {
             int empleadoID = Convert.ToInt32(txtEmpleadoID.Value);
@@ -61,13 +61,13 @@ namespace HR_Manager.Pages
                 Response.Write("<script>alert('Hubo un error al eliminar el control de horas');</script>");
             }
         }
-        
+
         protected void btnPagGestionAusencias_Click(object sender, EventArgs e)
         {
             Response.Redirect("PagGestionAusencias.aspx");
         }
 
-       
+
         //private void MostrarMensaje(string mensaje, string tipo)
         //{
         //    // Puedes agregar un contenedor para mostrar el mensaje en la página.

@@ -20,8 +20,8 @@ namespace HR_Manager.Pages
                 // Parámetros de la consulta
                 SqlParameter[] sqlParameters = new SqlParameter[]
                 {
-            new SqlParameter("@Usuario", SqlDbType.Text) { Value = nombreUsuario },
-            new SqlParameter("@Contraseña", SqlDbType.Text) { Value = contrasenna }
+            new SqlParameter("@Usuario", SqlDbType.NVarChar) { Value = nombreUsuario },
+            new SqlParameter("@Contraseña", SqlDbType.NVarChar) { Value = contrasenna }
                 };
 
                 // Ejecuta la consulta

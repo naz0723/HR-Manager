@@ -7,10 +7,10 @@ namespace HR_Manager.Pages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+
         }
 
-        
+
         protected void btnAgregarAusencia_Click(object sender, EventArgs e)
         {
             int empleadoID = Convert.ToInt32(txtEmpleadoID.Value);

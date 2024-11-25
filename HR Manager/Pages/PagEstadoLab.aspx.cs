@@ -6,10 +6,10 @@ namespace HR_Manager.Pages
 {
     public partial class PagEstadoLab : Page
     {
-        
+
         private string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["HRManager"].ConnectionString;
 
-        
+
         protected void btnAgregar_Click(object sender, EventArgs e)
         {
             string empleadoID = txtEmpleadoID.Value;
@@ -41,7 +41,7 @@ namespace HR_Manager.Pages
             }
         }
 
-        
+
         protected void btnActualizar_Click(object sender, EventArgs e)
         {
             string estadoLaboralID = txtEstadoLaboralID.Value;
@@ -75,7 +75,7 @@ namespace HR_Manager.Pages
             }
         }
 
-        
+
         protected void btnEliminar_Click(object sender, EventArgs e)
         {
             string estadoLaboralID = txtEstadoLaboralIDEliminar.Value;
@@ -99,7 +99,7 @@ namespace HR_Manager.Pages
             }
         }
 
-        
+
         protected void btnPagControlHoras_Click(object sender, EventArgs e)
         {
             Response.Redirect("PagControlHoras.aspx");

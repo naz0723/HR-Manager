@@ -9,7 +9,7 @@ namespace HR_Manager.Pages
     {
         public static DatabaseHelper dh = new DatabaseHelper();
 
-        
+
 
         public static bool AgregarControlHoras(int empleadoID, DateTime fecha, TimeSpan horaEntrada)
         {

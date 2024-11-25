@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Data.SqlClient;
-using System.Security.Cryptography;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace HR_Manager.Pages
 {
@@ -118,7 +116,7 @@ namespace HR_Manager.Pages
             }
         }
 
-        
+
         protected void btnActualizar_Click(object sender, EventArgs e)
         {
             string empleadoID = txtEmpleadoIDActualizar.Value;

@@ -7,7 +7,7 @@ namespace HR_Manager.Pages
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         protected void btnAgregarReporte_Click(object sender, EventArgs e)
@@ -31,7 +31,7 @@ namespace HR_Manager.Pages
             }
         }
 
-       
+
         protected void btnActualizarReporte_Click(object sender, EventArgs e)
         {
             int reporteID = Convert.ToInt32(txtReporteID.Value);
@@ -51,7 +51,7 @@ namespace HR_Manager.Pages
             }
         }
 
-       
+
         protected void btnEliminarReporte_Click(object sender, EventArgs e)
         {
             int reporteID = Convert.ToInt32(txtEliminarReporteID.Value);

@@ -9,16 +9,16 @@ namespace HR_Manager.Pages
     {
         public static DatabaseHelper dh = new DatabaseHelper();
 
-        
+
 
         public static bool AgregarEstadoLaboral(int empleadoID, string estado, DateTime fechaInicio, DateTime? fechaFin, string adicionadoPor)
         {
             try
             {
-                
+
                 string query = "sp_CrearEstadoLaboral";
 
-                
+
                 SqlParameter[] sqlParameters = new SqlParameter[]
                 {
             new SqlParameter("@Empleadold", SqlDbType.Int) { Value = empleadoID },
@@ -28,15 +28,15 @@ namespace HR_Manager.Pages
             new SqlParameter("@AdicionadoPor", SqlDbType.NVarChar, 50) { Value = adicionadoPor }
                 };
 
-                
+
                 int rowsAffected = dh.ExecuteNonQuery(query, sqlParameters);
 
-                
+
                 return rowsAffected > 0;
             }
             catch (Exception ex)
             {
-                
+
                 dh.LogError(ex);
                 return false;
             }
@@ -45,10 +45,10 @@ namespace HR_Manager.Pages
         {
             try
             {
-                
+
                 string query = "sp_ActualizarEstadoLaboral";
 
-                
+
                 SqlParameter[] sqlParameters = new SqlParameter[]
                 {
             new SqlParameter("@EstadoLaboralID", SqlDbType.Int) { Value = estadoLaboralID },
@@ -59,15 +59,15 @@ namespace HR_Manager.Pages
             new SqlParameter("@ModificadoPor", SqlDbType.NVarChar, 50) { Value = modificadoPor }
                 };
 
-                
+
                 int rowsAffected = dh.ExecuteNonQuery(query, sqlParameters);
 
-                
+
                 return rowsAffected > 0;
             }
             catch (Exception ex)
             {
-                
+
                 dh.LogError(ex);
                 return false;
             }
@@ -76,24 +76,24 @@ namespace HR_Manager.Pages
         {
             try
             {
-                
+
                 string query = "sp_EliminarEstadoLaboral";
 
-                
+
                 SqlParameter[] sqlParameters = new SqlParameter[]
                 {
             new SqlParameter("@EstadoLaboralID", SqlDbType.Int) { Value = estadoLaboralID }
                 };
 
-                
+
                 int rowsAffected = dh.ExecuteNonQuery(query, sqlParameters);
 
-                
+
                 return rowsAffected > 0;
             }
             catch (Exception ex)
             {
-                
+
                 dh.LogError(ex);
                 return false;
             }
