@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Data.SqlClient;
+using System.Security.Cryptography;
 using System.Web.UI;
+using System.Web.UI.WebControls;
 
 namespace HR_Manager.Pages
 {
@@ -9,14 +11,71 @@ namespace HR_Manager.Pages
         // Cadena de conexión a la base de datos (ajusta según tu configuración)
         private string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["HRManager"].ConnectionString;
 
-        
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (!IsPostBack)
+            {
+                CargarCargos();
+            }
+        }
+
+        private void CargarCargos()
+        {
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    conn.Open();
+                    string query = "SELECT CargoID, CargoNombre FROM Cargos"; // Ajusta según tu tabla
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    ddlCargo.DataSource = reader;
+                    ddlCargo.DataTextField = "CargoNombre";
+                    ddlCargo.DataValueField = "CargoID";
+                    ddlCargo.DataBind();
+
+                    ddlCargo.Items.Insert(0, new System.Web.UI.WebControls.ListItem("--Seleccionar Cargo--", ""));
+                }
+                catch (Exception ex)
+                {
+                    Response.Write("<script>alert('Error al cargar cargos: " + ex.Message + "');</script>");
+                }
+            }
+        }
+
+        private void CargarCargos()
+        {
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    conn.Open();
+                    string query = "SELECT CargoID, NombreCargo FROM Cargos"; // Ajusta según la estructura de tu tabla.
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    ddlCargo.DataSource = reader;
+                    ddlCargo.DataTextField = "NombreCargo"; // Campo que se mostrará en la lista.
+                    ddlCargo.DataValueField = "CargoID"; // Valor del campo (ID).
+                    ddlCargo.DataBind();
+
+                    ddlCargo.Items.Insert(0, new ListItem("-- Seleccione un cargo --", "0"));
+                }
+                catch (Exception ex)
+                {
+                    Response.Write("<script>alert('Error al cargar cargos: " + ex.Message + "');</script>");
+                }
+            }
+        }
+
         protected void btnAgregar_Click(object sender, EventArgs e)
         {
             string nombre = txtNombre.Value;
             string direccion = txtDireccion.Value;
             string contacto = txtContacto.Value;
             string fechaIngreso = txtFechaIngreso.Value;
-            string cargo = txtCargo.Value;
+            string cargo = ddlCargo.SelectedValue;
             string departamento = txtDepartamento.Value;
             decimal salario = decimal.Parse(txtSalario.Value);
             string adicionadoPor = txtAdicionadoPor.Value;
@@ -89,7 +148,7 @@ namespace HR_Manager.Pages
             }
         }
 
-        
+
         protected void btnEliminar_Click(object sender, EventArgs e)
         {
             string empleadoID = txtEmpleadoIDEliminar.Value;
@@ -113,7 +172,6 @@ namespace HR_Manager.Pages
             }
         }
 
-        
         protected void btnPagEstadoLab_Click(object sender, EventArgs e)
         {
             Response.Redirect("PagEstadoLab.aspx");

@@ -22,7 +22,7 @@ namespace HR_Manager.Pages
             new SqlParameter("@Direccion", SqlDbType.NVarChar, 255) { Value = direccion },
             new SqlParameter("@Contacto", SqlDbType.NVarChar, 50) { Value = contacto },
             new SqlParameter("@FechaIngreso", SqlDbType.Date) { Value = fechaIngreso },
-            new SqlParameter("@Cargo", SqlDbType.NVarChar, 100) { Value = cargo },
+            new SqlParameter("@Cargo", SqlDbType.Int) { Value = cargo },
             new SqlParameter("@Departamento", SqlDbType.NVarChar, 100) { Value = departamento },
             new SqlParameter("@Salario", SqlDbType.Decimal) { Value = salario },
             new SqlParameter("@AdicionadoPor", SqlDbType.NVarChar, 50) { Value = adicionadoPor }
@@ -56,7 +56,7 @@ namespace HR_Manager.Pages
             new SqlParameter("@Direccion", SqlDbType.NVarChar, 255) { Value = direccion },
             new SqlParameter("@Contacto", SqlDbType.NVarChar, 50) { Value = contacto },
             new SqlParameter("@FechaIngreso", SqlDbType.Date) { Value = fechaIngreso },
-            new SqlParameter("@Cargo", SqlDbType.NVarChar, 100) { Value = cargo },
+            new SqlParameter("@Cargo", SqlDbType.Int) { Value = cargo },
             new SqlParameter("@Departamento", SqlDbType.NVarChar, 100) { Value = departamento },
             new SqlParameter("@Salario", SqlDbType.Decimal) { Value = salario },
             new SqlParameter("@ModificadoPor", SqlDbType.NVarChar, 50) { Value = modificadoPor }

@@ -28,8 +28,9 @@
                 <label for="txtFechaIngreso">Fecha de Ingreso:</label>
                 <input type="date" id="txtFechaIngreso" runat="server"  />
 
-                <label for="txtCargo">Cargo:</label>
-                <input type="text" id="txtCargo" runat="server"  />
+                <label for="ddlCargo">Cargo:</label>
+                <asp:DropDownList ID="ddlCargo" runat="server">
+                </asp:DropDownList>
 
                 <label for="txtDepartamento">Departamento:</label>
                 <input type="text" id="txtDepartamento" runat="server"  />
@@ -43,15 +44,7 @@
                 <asp:Button ID="btnAgregar" runat="server" Text="Agregar Empleado" OnClick="btnAgregar_Click" />
             </div>
 
-            
-            <div class="form-section">
-                <h3>Eliminar Empleado</h3>
-                <label for="txtEmpleadoIDEliminar">ID del Empleado:</label>
-                <input type="text" id="txtEmpleadoIDEliminar" runat="server"  />
-                <asp:Button ID="btnEliminar" runat="server" Text="Eliminar Empleado" OnClick="btnEliminar_Click" />
-            </div>
-
-            
+   
             <div class="form-section">
                 <h3>Actualizar Empleado</h3>
                 <label for="txtEmpleadoIDActualizar">ID del Empleado:</label>
@@ -84,7 +77,14 @@
                 <asp:Button ID="btnActualizar" runat="server" Text="Actualizar Empleado" OnClick="btnActualizar_Click" />
             </div>
 
-            
+            <div class="form-section">
+                <h3>Eliminar Empleado</h3>
+                <label for="txtEmpleadoIDEliminar">ID del Empleado:</label>
+                <input type="text" id="txtEmpleadoIDEliminar" runat="server"  />
+                <asp:Button ID="btnEliminar" runat="server" Text="Eliminar Empleado" OnClick="btnEliminar_Click" />
+            </div>
+
+
             <div class="form-section">
                 <asp:Button ID="btnPagEstadoLab" runat="server" Text="Gestionar Estado Laboral" OnClick="btnPagEstadoLab_Click" />
             </div>
