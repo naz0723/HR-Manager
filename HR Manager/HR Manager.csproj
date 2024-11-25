@@ -82,6 +82,7 @@
   <ItemGroup>
     <Content Include="App_data\Primeras dos tablas y Crud.sql" />
     <Content Include="App_data\Segundas tres tablas y Crud.sql" />
+    <Content Include="Pages\Loginform.aspx" />
     <Content Include="Pages\PagControlHoras.aspx" />
     <Content Include="Pages\PagEmpleado.aspx" />
     <Content Include="Pages\PagEstadoLab.aspx" />
@@ -97,6 +98,13 @@
     <Compile Include="Pages\clEstadoLab.cs" />
     <Compile Include="Pages\clReportePuntualidad.cs" />
     <Compile Include="Pages\DatabaseHelper.cs" />
+    <Compile Include="Pages\Loginform.aspx.cs">
+      <DependentUpon>Loginform.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\Loginform.aspx.designer.cs">
+      <DependentUpon>Loginform.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\PagControlHoras.aspx.cs">
       <DependentUpon>PagControlHoras.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
