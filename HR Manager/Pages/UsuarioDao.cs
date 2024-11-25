@@ -10,42 +10,42 @@ namespace HR_Manager.Pages
     {
         public static DatabaseHelper dh = new DatabaseHelper();
 
-        public static int? IniciarSesion(string nombreUsuario, string contrasenna)
+        public static DataRow IniciarSesion(string nombreUsuario, string contrasenna)
         {
             dh = new DatabaseHelper();
             try
             {
+                // Definir la consulta SQL para ejecutar el procedimiento almacenado
+                //string query = "EXEC sp_IniciarSesion @NombreUsuario = '" + nombreUsuario + "', @Contrasenna = '" + contrasenna + "'; ";
                 string query = "sp_IniciarSesion";
 
-                // Parámetros de la consulta
+                // Define los parámetros
                 SqlParameter[] sqlParameters = new SqlParameter[]
                 {
-            new SqlParameter("@Usuario", SqlDbType.NVarChar) { Value = nombreUsuario },
-            new SqlParameter("@Contraseña", SqlDbType.NVarChar) { Value = contrasenna }
+                    new SqlParameter("@Usuario",SqlDbType.Text){Value = nombreUsuario},
+                    new SqlParameter("@Contraseña", SqlDbType.Text){Value = contrasenna},
                 };
 
-                // Ejecuta la consulta
+                // Ejecutar la consulta y obtener los resultados
                 DataTable resultado = dh.ExecuteSelectQuery(query, sqlParameters);
 
-                // Verificar si la consulta devolvió resultados
+                // Verificar si se ha devuelto algún resultado
                 if (resultado.Rows.Count > 0)
                 {
-                    // Imprime los resultados para verificar
-                    Debug.WriteLine("Usuario encontrado: " + resultado.Rows[0]["UsuarioID"]);
-                    return (int?)resultado.Rows[0]["UsuarioID"];
+                    // Devolver la primera fila de resultados
+                    return resultado.Rows[0];
                 }
                 else
                 {
-                    Debug.WriteLine("Usuario no encontrado.");
+                    // Si no se encontró el usuario, retornar null
                     return null;
                 }
             }
             catch (Exception ex)
             {
-                // Maneja el error si algo sale mal
+                // Manejar cualquier error que ocurra y registrar el error
                 dh.LogError(ex);
-                Debug.WriteLine("Error: " + ex.Message);
-                return null;
+                throw; // Re-lanzar la excepción para manejarla en un nivel superior
             }
         }
 

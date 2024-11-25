@@ -8,17 +8,20 @@
     <link type="text/css" rel="stylesheet" href="../Styles/Estilos.css" />
 </head>
 <body>
-    <form id="form1" runat="server">
-        <div class="login-container">
-            <h2>Inicio de Sesión</h2>
-            <label for="txtUsername">Usuario</label>
-            <asp:TextBox ID="txtUsername" runat="server" placeholder="Ingrese su usuario"></asp:TextBox>
-            <label for="txtPassword">Contraseña</label>
-            <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" placeholder="Ingrese su contraseña"></asp:TextBox>
-            <asp:Button ID="btnLogin" runat="server" Text="Iniciar Sesión" OnClick="BtnLogin_Click" />
-            <asp:Label ID="lblMessage" runat="server" CssClass="error-message" Visible="false"></asp:Label>
-        </div>
-    </form>
+    <div class="login-form">
+        <h2>Login</h2>
+        <form id="form1" runat="server" method="post">
+            <label for="username">Usuario:</label>
+            <input type="text" id="username" name="user" runat="server" required>
+
+            <label for="password">Contraseña:</label>
+            <input type="password" id="password" name="pass" runat="server" required>
+            <br />
+            <button type="submit" runat="server" onserverclick="btnLogin_Click">Iniciar sesión</button>
+        </form>
+        <div class="message" runat="server" id="lblMessage"></div>
+        <!-- Div para mensajes -->
+    </div>
 </body>
 </html>
 

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Web.UI;
 
 namespace HR_Manager.Pages
@@ -9,38 +10,27 @@ namespace HR_Manager.Pages
         {
         }
 
-        protected void BtnLogin_Click(object sender, EventArgs e)
+        protected void btnLogin_Click(object sender, EventArgs e)
         {
-            string usuario = txtUsername.Text.Trim();
-            string contraseña = txtPassword.Text.Trim();
+            // Obtener el nombre de usuario y la contraseña desde los campos de entrada
+            string nombreUsuario = username.Value; //   username es un input con runat="server"
+            string contrasenna = password.Value; //   password es un input con runat="server"
 
-            try
+            // Intentar iniciar sesión utilizando UsuarioDAO
+            DataRow usuario = UsuarioDAO.IniciarSesion(nombreUsuario, contrasenna);
+
+            // Verificar si el inicio de sesión fue exitoso
+            if (usuario != null)
             {
-                // Intentar autenticar al usuario con el DAO
-                int? usuarioID = UsuarioDAO.IniciarSesion(usuario, contraseña);
-
-                if (usuarioID.HasValue)
-                {
-                    // Guardamos el UsuarioID en la sesión
-                    Session["UsuarioID"] = usuarioID.Value;
-
-                    // Depuración para verificar la sesión
-                    Response.Write("UsuarioID guardado: " + Session["UsuarioID"]);
-
-                    // Redirigir a la página principal
-                    Response.Redirect("PagEmpleado.aspx");
-                }
-                else
-                {
-                    lblMessage.Text = "Usuario o contraseña incorrectos.";
-                    lblMessage.Visible = true;
-                }
+                // Inicio de sesión exitoso, redirigir a la página del menú
+                Response.Redirect("PagEmpleado.aspx");
             }
-            catch (Exception ex)
+            else
             {
-                lblMessage.Text = "Error al iniciar sesión: " + ex.Message;
-                lblMessage.Visible = true;
+                // Mostrar un mensaje de error en lblMessage
+                lblMessage.InnerText = "Nombre de usuario o contraseña incorrectos."; // lblMessage debe tener runat="server"
             }
+
         }
 
 
