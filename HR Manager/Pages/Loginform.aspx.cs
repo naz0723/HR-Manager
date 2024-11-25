@@ -9,7 +9,7 @@ using System.Web.UI.WebControls;
 namespace HR_Manager.Pages
 {
     public partial class Loginform : System.Web.UI.Page
-    {
+    { 
         protected void Page_Load(object sender, EventArgs e)
         {
 
