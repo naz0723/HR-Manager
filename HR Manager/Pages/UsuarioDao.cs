@@ -2,7 +2,6 @@
 using System;
 using System.Data;
 using System.Data.SqlClient;
-using System.Diagnostics;
 
 namespace HR_Manager.Pages
 {
@@ -10,46 +9,43 @@ namespace HR_Manager.Pages
     {
         public static DatabaseHelper dh = new DatabaseHelper();
 
-        public static DataRow IniciarSesion(string nombreUsuario, string contrasenna)
+        public static DataRow IniciarSesion(string Usuario, string contraseña)
         {
-            dh = new DatabaseHelper();
             try
             {
-                // Definir la consulta SQL para ejecutar el procedimiento almacenado
-                //string query = "EXEC sp_IniciarSesion @NombreUsuario = '" + nombreUsuario + "', @Contrasenna = '" + contrasenna + "'; ";
                 string query = "sp_IniciarSesion";
 
-                // Define los parámetros
                 SqlParameter[] sqlParameters = new SqlParameter[]
                 {
-                    new SqlParameter("@Usuario",SqlDbType.Text){Value = nombreUsuario},
-                    new SqlParameter("@Contraseña", SqlDbType.Text){Value = contrasenna},
+                    new SqlParameter("@Usuario", SqlDbType.NVarChar, 255) { Value = Usuario },
+                    new SqlParameter("@Contraseña", SqlDbType.NVarChar, 255) { Value = contraseña },
                 };
 
-                // Ejecutar la consulta y obtener los resultados
                 DataTable resultado = dh.ExecuteSelectQuery(query, sqlParameters);
 
-                // Verificar si se ha devuelto algún resultado
+                // Verificar si se obtuvo algún resultado
                 if (resultado.Rows.Count > 0)
                 {
-                    // Devolver la primera fila de resultados
                     return resultado.Rows[0];
                 }
                 else
                 {
-                    // Si no se encontró el usuario, retornar null
+                    // Las credenciales son incorrectas, mostrar mensaje de error.
                     return null;
                 }
             }
             catch (Exception ex)
             {
-                // Manejar cualquier error que ocurra y registrar el error
+                // Loggear el error.
                 dh.LogError(ex);
-                throw; // Re-lanzar la excepción para manejarla en un nivel superior
+
+                // También podrías considerar lanzar una excepción para que la aplicación gestione el error apropiadamente.
+                throw new Exception("Error al iniciar sesión.", ex);
             }
         }
-
     }
 }
+
+
 
 
