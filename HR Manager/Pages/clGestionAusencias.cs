@@ -1,4 +1,4 @@
-﻿using HR_Manager.App_code;
+﻿using HRManager.App_code;
 using System;
 using System.Data;
 using System.Data.SqlClient;

@@ -7,7 +7,7 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace HR_Manager.Pages
+namespace HRManager.Pages
 {
 
 

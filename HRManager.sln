@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35506.116 d17.12
+VisualStudioVersion = 17.12.35506.116
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HR Manager", "HR Manager\HR Manager.csproj", "{BE702FCA-A27D-4F5F-81A9-14ED12D0EE7A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HRManager", "HR Manager\HRManager.csproj", "{BE702FCA-A27D-4F5F-81A9-14ED12D0EE7A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

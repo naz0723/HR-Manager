@@ -1,9 +1,9 @@
-﻿using HR_Manager.App_code;
+﻿using HRManager.App_code;
 using System;
 using System.Data;
 using System.Web.UI;
 
-namespace HR_Manager.Pages
+namespace HRManager.Pages
 {
     public partial class Loginform : Page
     {
@@ -13,7 +13,7 @@ namespace HR_Manager.Pages
         {
         }
 
-        protected void BtnLogin_Click(object sender, EventArgs e)
+        protected void btnLogin_Click(object sender, EventArgs e)
         {
           
             string Usuario = username.Value;
@@ -26,7 +26,7 @@ namespace HR_Manager.Pages
             if (Usuario != null)
             {
                 
-                Response.Redirect("PagEmpleado.aspx", false);
+                Response.Redirect("PagEmpleado.aspx");
             }
             else
             {

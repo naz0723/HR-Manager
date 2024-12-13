@@ -1,9 +1,9 @@
-﻿using HR_Manager.App_code;
+﻿using HRManager.App_code;
 using System;
 using System.Data;
 using System.Data.SqlClient;
 
-namespace HR_Manager.Pages
+namespace HRManager.Pages
 {
     public class UsuarioDAO
     {
@@ -23,7 +23,7 @@ namespace HR_Manager.Pages
 
                 DataTable resultado = dh.ExecuteSelectQuery(query, sqlParameters);
 
-               
+
                 if (resultado.Rows.Count > 0)
                 {
                     return resultado.Rows[0];
@@ -37,10 +37,7 @@ namespace HR_Manager.Pages
             {
 
                 dh.LogError(ex);
-                Console.WriteLine(ex);
-
-                
-                throw new Exception("Error al iniciar sesión.", ex);
+                throw new Exception("Error al iniciar sesión: ");
             }
         }
     }
