@@ -32,7 +32,7 @@ namespace HR_Manager.App_code
         /// </summary> 
         public void LogError(Exception ex)
         {
-            string logFilePath = @"C:\PWEB\HR Manager\HR Manager\Errores\database_errors.log";// Ubicación y nombre del archivo de log
+            string logFilePath = @"C:\PWEB\HR Manager\HR Manager\Errores\database_errors.txt";// Ubicación y nombre del archivo de log
 
             using (StreamWriter writer = new StreamWriter(logFilePath, true)) // 'true' para agregar al final del archivo
             {
@@ -111,6 +111,7 @@ namespace HR_Manager.App_code
             catch (Exception ex)
             {
                 LogError(ex);
+                Console.WriteLine(ex);
                 throw; // Re-lanzar la excepción para que el llamador la maneje
             }
         }

@@ -23,23 +23,23 @@ namespace HR_Manager.Pages
 
                 DataTable resultado = dh.ExecuteSelectQuery(query, sqlParameters);
 
-                // Verificar si se obtuvo algún resultado
+               
                 if (resultado.Rows.Count > 0)
                 {
                     return resultado.Rows[0];
                 }
                 else
                 {
-                    // Las credenciales son incorrectas, mostrar mensaje de error.
                     return null;
                 }
             }
             catch (Exception ex)
             {
-                // Loggear el error.
-                dh.LogError(ex);
 
-                // También podrías considerar lanzar una excepción para que la aplicación gestione el error apropiadamente.
+                dh.LogError(ex);
+                Console.WriteLine(ex);
+
+                
                 throw new Exception("Error al iniciar sesión.", ex);
             }
         }

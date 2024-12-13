@@ -13,7 +13,7 @@ namespace HR_Manager.Pages
         {
         }
 
-        protected void btnLogin_Click(object sender, EventArgs e)
+        protected void BtnLogin_Click(object sender, EventArgs e)
         {
           
             string Usuario = username.Value;
@@ -26,7 +26,7 @@ namespace HR_Manager.Pages
             if (Usuario != null)
             {
                 
-                Response.Redirect("PagEmpleado.aspx");
+                Response.Redirect("PagEmpleado.aspx", false);
             }
             else
             {
